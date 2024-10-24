@@ -6,16 +6,17 @@
     justify-content: center;
 }
 
-.container{
+/* .container{
     border-radius: 20px;
     border: 5px, rgba(0, 0, 0, 0.711), solid;
    background-image: url(./OIP.jpg);
  
-}
+} */
 
-h1{
+h1, h2{
     color: rgb(0, 0, 0);
     text-align: center;
+    
 }
 
 .player1, .player2, .tie{
@@ -40,19 +41,22 @@ h1{
 }
 
 .score{
-    border: 5px, rgba(0, 0, 0, 0.711), solid;
+   background-color: rgb(0, 0, 0);
+    border: 5px, rgba(0, 0, 0, 0.925), solid;
     height: 160px;
     display: flex;
     justify-content: center;
-    border-radius: 20px;
+    margin: 10px;
     
 }
 
 .itemContainer{
+border-radius: 20px;
+border: 5px, rgba(0, 0, 0, 0.711), solid;
+background-image: url(./OIP.jpg);
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-bottom: 20px;
 }
 
 .row{
@@ -60,10 +64,12 @@ margin-bottom: 20px;
 
 }
 
-.boxItems{
-    border: 5px, rgba(0, 0, 0, 0.586), solid;
+.boxItems, button{
+    border-radius: 20px;
     margin: 5px;
     width: 130px;
     height: 140px;
     background-color: rgba(84, 41, 3, 0.608);
 }
+
+.boxItems{background-color: transparent;}
