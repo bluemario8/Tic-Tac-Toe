@@ -22,7 +22,7 @@ function updateBoard()
     {
         for (let y = 0; y < board.length; y++)
         {
-            itemContainer.children[y].children[x].children[0].innerText = board[y][x];
+            itemContainer.children[y].children[x].children[0].innerText`` = board[y][x];
         }
     }
 
@@ -43,6 +43,18 @@ function updateScores()
     else if(winner == 'Tie'){
         tieScore = tieScore + 1
         document.getElementsByClassName('tieScore')[0].innerText = tieScore
+    }
+}
+
+function highlightWinner()
+{
+    let winner = findWinner();
+    if (Array.isArray(winner))
+    {
+        for (let i = 0; i < board.length; i++)
+        {
+            itemContainer.children[winner[i][1]].children[winner[i][0]].children[0]
+        }
     }
 }
 
