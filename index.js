@@ -29,6 +29,23 @@ function updateBoard()
     PlayerTurnElement.innerText = `player ${currentPlayerTurn}'s turn`
 }
 
+function updateScores()
+{
+    let winner = findWinner()
+    if(winner[3] == 'X'){
+        player1score = player1score + 1
+     document.getElementsByClassName('player1score')[0].innerText = player1score
+    }
+    else if(winner[3] == 'O'){
+        player2score = player2score + 1
+        document.getElementsByClassName('player2score')[0].innerText = player2score
+    }
+    else if(winner == 'Tie'){
+        tieScore = tieScore + 1
+        document.getElementsByClassName('tieScore')[0].innerText = tieScore
+    }
+}
+
 function boardAdd(x, y) 
 {
     if (board[y][x] !== "")
@@ -45,19 +62,7 @@ function boardAdd(x, y)
         currentPlayerTurn = "X";
 
     updateBoard();
-    let winner = findWinner()
-    if(winner[3] == 'X'){
-        player1score = player1score + 1
-     document.getElementsByClassName('player1score')[0].innerText = player1score
-    }
-    else if(winner[3] == 'O'){
-        player2score = player2score + 1
-        document.getElementsByClassName('player2score')[0].innerText = player2score
-    }
-    else if(winner == 'Tie'){
-        tieScore = tieScore + 1
-        document.getElementsByClassName('tieScore')[0].innerText = tieScore
-    }
+    updateScores(); 
 }
 
 function findWinner()
