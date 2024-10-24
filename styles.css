@@ -64,10 +64,12 @@ align-items: center;
 
 }
 
-.boxItems{
+.boxItems, button{
     border-radius: 20px;
     margin: 5px;
     width: 130px;
     height: 140px;
     background-color: rgba(84, 41, 3, 0.608);
 }
+
+.boxItems{background-color: transparent;}
