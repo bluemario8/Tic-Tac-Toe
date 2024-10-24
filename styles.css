@@ -1,6 +1,7 @@
 *{
    margin: 0%; 
 }
+
 .page{
     display: flex;
     justify-content: center;
@@ -73,3 +74,7 @@ align-items: center;
 }
 
 .boxItems{background-color: transparent;}
+
+.btn {
+    font-size: 100px;
+}
