@@ -5,6 +5,7 @@ let board = [
 ]
 let currentPlayerTurn = "X";
 const itemContainer = document.getElementsByClassName("itemContainer")[0];
+const PlayerTurnElement = document.getElementsByClassName("player-turn")[0];
 
 
 
@@ -22,6 +23,8 @@ function updateBoard()
             itemContainer.children[y].children[x].children[0].innerText = board[y][x];
         }
     }
+
+    PlayerTurnElement.innerText = `player ${currentPlayerTurn}'s turn`
 }
 
 function boardAdd(x, y) 
