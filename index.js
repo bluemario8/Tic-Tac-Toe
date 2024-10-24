@@ -65,20 +65,3 @@ function findWinner()
 
     return ""; // if no one won yet
 }
-
-
-// Testing commands below. Remove when implementing js into html
-
-boardAdd(0, 0);
-boardAdd(0, 1);
-boardAdd(0, 2);
-boardAdd(2, 0);
-boardAdd(1, 1);
-boardAdd(2, 2);
-boardAdd(2, 1);
-boardAdd(1, 0);
-boardAdd(1, 2);
-
-printBoard();
-console.log(findWinner());
-console.log(`The winner is ${findWinner()}`);
