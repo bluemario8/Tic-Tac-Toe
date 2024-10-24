@@ -12,13 +12,13 @@ function printBoard()
 
 function boardAdd(x, y) 
 {
-    if (board[x][y] !== "")
+    if (board[y][x] !== "")
     {
         console.log("Already a character there");
         return;
     }
 
-    board[x][y] = currentPlayerTurn;
+    board[y][x] = currentPlayerTurn;
 
     if (currentPlayerTurn === "X")
         currentPlayerTurn = "O";
@@ -51,14 +51,30 @@ function findWinner()
         board[0][2] === board[1][1] && board[0][2] === board[2][0]
     )
         return [[0, 2], [1, 1], [2, 0], board[0][2]];
+    // check if the board is full
+    let boardItems = "";
+    for (let x = 0; x < board.length; x++)
+    {
+        for (let y = 0; y < board.length; y++)
+        {
+            boardItems += board[y][x];
+        }
+    }
+    if (boardItems.length === 9)
+        return "Tie";
+
+    return ""; // if no one won yet
 }
 
-boardAdd(0, 2);
-boardAdd(1, 1);
-boardAdd(2, 0);
 boardAdd(0, 0);
-boardAdd(1, 0);
+boardAdd(0, 1);
+boardAdd(0, 2);
+boardAdd(2, 0);
+boardAdd(1, 1);
 boardAdd(2, 2);
+boardAdd(2, 1);
+boardAdd(1, 0);
+boardAdd(1, 2);
 
 printBoard();
 console.log(findWinner());
