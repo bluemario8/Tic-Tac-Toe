@@ -4,10 +4,24 @@ let board = [
     ["", "", ""]
 ]
 let currentPlayerTurn = "X";
+const itemContainer = document.getElementsByClassName("itemContainer")[0];
+
+
 
 function printBoard()
 {
     console.log(board[0], "\n", board[1], "\n", board[2]);
+}
+
+function updateBoard() 
+{
+    for (let x = 0; x < board.length; x++)
+    {
+        for (let y = 0; y < board.length; y++)
+        {
+            itemContainer.children[y].children[x].children[0].innerText = board[y][x];
+        }
+    }
 }
 
 function boardAdd(x, y) 
@@ -24,6 +38,8 @@ function boardAdd(x, y)
         currentPlayerTurn = "O";
     else
         currentPlayerTurn = "X";
+
+    updateBoard();
 }
 
 function findWinner()
