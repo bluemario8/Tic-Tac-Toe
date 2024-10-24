@@ -66,6 +66,9 @@ function findWinner()
     return ""; // if no one won yet
 }
 
+
+// Testing commands below. Remove when implementing js into html
+
 boardAdd(0, 0);
 boardAdd(0, 1);
 boardAdd(0, 2);
