@@ -60,8 +60,6 @@ function boardAdd(x, y)
     }
  if (findWinner()){
     setTimeout(clearBoard, 1000);
-    // gameOver()
-    // clearBoard()
  }
 }
  
@@ -118,6 +116,3 @@ function resetBoard(){
     location.reload()
 }
 
-function gameOver(){
-    alert("the board will reset in a few seconds")
-}
