@@ -48,6 +48,9 @@ function updateScores()
         tieScore = tieScore + 1
         document.getElementsByClassName('tieScore')[0].innerText = tieScore
     }
+    if(findWinner()){
+        setTimeout(clearBoard, 2000)
+    }
 }
 
 function highlightWinner()
@@ -82,7 +85,7 @@ function boardAdd(x, y)
     updateBoard();
     updateScores(); 
 }
-
+ 
 function findWinner()
 {
     for (let i = 0; i < board.length; i++)
@@ -133,7 +136,6 @@ function clearBoard(){
     currentPlayerTurn = roundNum % 2 === 0 ? "O" : "X";
 
     updateBoard()
-
     for (let x = 0; x < board.length; x++)
     {
         for (let y = 0; y < board.length; y++)
@@ -141,6 +143,7 @@ function clearBoard(){
             itemContainer.children[y].children[x].children[0].style.backgroundColor = "";
         }
     }
+
 }
 
 function resetBoard(){
