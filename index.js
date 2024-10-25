@@ -108,3 +108,7 @@ function clearBoard(){
     ]
     updateBoard()
 }
+
+function resetBoard(){
+    location.reload()
+}
