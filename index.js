@@ -5,6 +5,7 @@ let board = [
 ]
 let currentPlayerTurn = "X";
 const itemContainer = document.getElementsByClassName("itemContainer")[0];
+const PlayerTurnElement = document.getElementsByClassName("player-turn")[0];
 var player1score = 0
 var player2score = 0
 var tieScore = 0
@@ -25,6 +26,41 @@ function updateBoard()
             
         }
     }
+
+    PlayerTurnElement.innerText = `player ${currentPlayerTurn}'s turn`
+
+    highlightWinner();
+}
+
+function updateScores()
+{
+    let winner = findWinner()
+    if(winner[3] == 'X'){
+        player1score = player1score + 1
+     document.getElementsByClassName('player1score')[0].innerText = player1score
+    }
+    else if(winner[3] == 'O'){
+        player2score = player2score + 1
+        document.getElementsByClassName('player2score')[0].innerText = player2score
+    }
+    else if(winner == 'Tie'){
+        tieScore = tieScore + 1
+        document.getElementsByClassName('tieScore')[0].innerText = tieScore
+    }
+}
+
+function highlightWinner()
+{
+    let winner = findWinner();
+    if (Array.isArray(winner))
+    {
+        let color = winner[3] === "X" ? "rgb(76, 76, 142)" : "rgb(175, 74, 74)"; 
+        console.log(color);
+        for (let i = 0; i < board.length; i++)
+        {
+            itemContainer.children[winner[i][0]].children[winner[i][1]].children[0].style.backgroundColor = color;
+        }
+    }
 }
 
 function boardAdd(x, y) 
@@ -43,6 +79,7 @@ function boardAdd(x, y)
         currentPlayerTurn = "X";
 
     updateBoard();
+    updateScores(); 
 
     let winner = findWinner();
     if(winner[3] === 'X'){
@@ -57,7 +94,6 @@ function boardAdd(x, y)
         tieScore = tieScore + 1;
         document.getElementsByClassName('tieScore')[0].innerText = tieScore
     }
-    
 }
 
 function findWinner()
@@ -107,8 +143,17 @@ function clearBoard(){
         ["", "", ""]
     ]
     updateBoard()
+    for (let x = 0; x < board.length; x++)
+    {
+        for (let y = 0; y < board.length; y++)
+        {
+            itemContainer.children[y].children[x].children[0].style.backgroundColor = "";
+        }
+    }
+
 }
 
 function resetBoard(){
     location.reload()
+
 }
