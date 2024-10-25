@@ -4,6 +4,7 @@ let board = [
     ["", "", ""]
 ]
 let currentPlayerTurn = "X";
+let roundNum = 1;
 const itemContainer = document.getElementsByClassName("itemContainer")[0];
 const PlayerTurnElement = document.getElementsByClassName("player-turn")[0];
 var player1score = 0
@@ -80,20 +81,6 @@ function boardAdd(x, y)
 
     updateBoard();
     updateScores(); 
-
-    let winner = findWinner();
-    if(winner[3] === 'X'){
-        player1score = player1score + 1;
-     document.getElementsByClassName('player1score')[0].innerText = player1score
-    }
-    else if(winner[3] === 'O'){
-        player2score = player2score + 1;
-        document.getElementsByClassName('player2score')[0].innerText = player2score
-    }
-    else if(winner === 'Tie'){
-        tieScore = tieScore + 1;
-        document.getElementsByClassName('tieScore')[0].innerText = tieScore
-    }
 }
 
 function findWinner()
@@ -142,5 +129,16 @@ function clearBoard(){
         ["", "", ""],
         ["", "", ""]
     ]
+    roundNum++;
+    currentPlayerTurn = roundNum % 2 === 0 ? "O" : "X";
+
     updateBoard()
+
+    for (let x = 0; x < board.length; x++)
+    {
+        for (let y = 0; y < board.length; y++)
+        {
+            itemContainer.children[y].children[x].children[0].style.backgroundColor = "";
+        }
+    }
 }
