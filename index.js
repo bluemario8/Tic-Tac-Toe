@@ -49,6 +49,7 @@ function boardAdd(x, y)
         player1score = player1score + 1;
      document.getElementsByClassName('player1score')[0].innerText = player1score
     }
+
     else if(winner[3] === 'O'){
         player2score = player2score + 1;
         document.getElementsByClassName('player2score')[0].innerText = player2score
@@ -57,9 +58,13 @@ function boardAdd(x, y)
         tieScore = tieScore + 1;
         document.getElementsByClassName('tieScore')[0].innerText = tieScore
     }
-    
+ if (findWinner()){
+    setTimeout(clearBoard, 1000);
+    // gameOver()
+    // clearBoard()
+ }
 }
-
+ 
 function findWinner()
 {
     for (let i = 0; i < board.length; i++)
@@ -111,4 +116,8 @@ function clearBoard(){
 
 function resetBoard(){
     location.reload()
+}
+
+function gameOver(){
+    alert("the board will reset in a few seconds")
 }
