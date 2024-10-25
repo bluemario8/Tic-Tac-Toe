@@ -142,14 +142,16 @@ function clearBoard(){
     currentPlayerTurn = roundNum % 2 === 0 ? "O" : "X";
 
     updateBoard()
-    for (let x = 0; x < board.length; x++)
+    for (let button of document.getElementsByClassName("btn"))
     {
-        for (let y = 0; y < board.length; y++)
+        button.style.backgroundColor = "";
+        if (button.matches(":hover"))
         {
-            itemContainer.children[y].children[x].children[0].style.backgroundColor = "";
+            button.innerText = currentPlayerTurn;
+            button.style.color = "rgba(0, 0, 0, 0.5)";
         }
-    }
 
+    }
 }
 
 function resetBoard(){
