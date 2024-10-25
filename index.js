@@ -22,11 +22,13 @@ function updateBoard()
     {
         for (let y = 0; y < board.length; y++)
         {
-            itemContainer.children[y].children[x].children[0].innerText`` = board[y][x];
+            itemContainer.children[y].children[x].children[0].innerText = board[y][x];
         }
     }
 
     PlayerTurnElement.innerText = `player ${currentPlayerTurn}'s turn`
+
+    highlightWinner();
 }
 
 function updateScores()
@@ -51,9 +53,11 @@ function highlightWinner()
     let winner = findWinner();
     if (Array.isArray(winner))
     {
+        let color = winner[3] === "X" ? "rgb(76, 76, 142)" : "rgb(175, 74, 74)"; 
+        console.log(color);
         for (let i = 0; i < board.length; i++)
         {
-            itemContainer.children[winner[i][1]].children[winner[i][0]].children[0]
+            itemContainer.children[winner[i][0]].children[winner[i][1]].children[0].style.backgroundColor = color;
         }
     }
 }
