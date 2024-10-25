@@ -143,7 +143,6 @@ function clearBoard(){
         ["", "", ""]
     ]
     updateBoard()
-
     for (let x = 0; x < board.length; x++)
     {
         for (let y = 0; y < board.length; y++)
@@ -151,4 +150,10 @@ function clearBoard(){
             itemContainer.children[y].children[x].children[0].style.backgroundColor = "";
         }
     }
+
+}
+
+function resetBoard(){
+    location.reload()
+
 }
