@@ -51,8 +51,12 @@ function updateScores()
         tieScore = tieScore + 1
         document.getElementsByClassName('tieScore')[0].innerText = tieScore
     }
+    let currentRoundNum = roundNum;
     if(findWinner()){
-        setTimeout(clearBoard, 2000)
+        setTimeout((e) => {
+            if (currentRoundNum === roundNum)
+                clearBoard()
+        }, 2000)
     }
 }
 
