@@ -22,6 +22,7 @@ function updateBoard()
         for (let y = 0; y < board.length; y++)
         {
             itemContainer.children[y].children[x].children[0].innerText = board[y][x];
+            
         }
     }
 }
@@ -42,19 +43,21 @@ function boardAdd(x, y)
         currentPlayerTurn = "X";
 
     updateBoard();
-    let winner = findWinner()
-    if(winner[3] == 'X'){
-        player1score = player1score + 1
+
+    let winner = findWinner();
+    if(winner[3] === 'X'){
+        player1score = player1score + 1;
      document.getElementsByClassName('player1score')[0].innerText = player1score
     }
-    else if(winner[3] == 'O'){
-        player2score = player2score + 1
+    else if(winner[3] === 'O'){
+        player2score = player2score + 1;
         document.getElementsByClassName('player2score')[0].innerText = player2score
     }
-    else if(winner == 'Tie'){
-        tieScore = tieScore + 1
+    else if(winner === 'Tie'){
+        tieScore = tieScore + 1;
         document.getElementsByClassName('tieScore')[0].innerText = tieScore
     }
+    
 }
 
 function findWinner()
@@ -95,4 +98,17 @@ function findWinner()
         return "Tie";
 
     return ""; // if no one won yet
+}
+
+function clearBoard(){
+   board = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ]
+    updateBoard()
+}
+
+function resetBoard(){
+    location.reload()
 }
