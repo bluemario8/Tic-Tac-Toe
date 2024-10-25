@@ -161,7 +161,7 @@ for (let button of document.getElementsByClassName("btn"))
     button.addEventListener("mouseover", (e) => {
         console.log("mouseover")
         console.log(button.innerText)
-        if (button.innerText === "")
+        if (button.innerText === "" && !win)
         {
             button.innerText = currentPlayerTurn;
             button.style.color = "rgba(0, 0, 0, 0.5)";
