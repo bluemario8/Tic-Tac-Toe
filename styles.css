@@ -30,7 +30,7 @@ h1, h2{
 }
 
 .player1{
-    background-color: rgba(76, 76, 142, 0.63);
+    background-color: rgba(76, 76, 142, 0.523);
 }
 
 .player2{
@@ -71,6 +71,9 @@ align-items: center;
     width: 130px;
     height: 140px;
     background-color: rgba(84, 41, 3, 0.608);
+}
+button:hover{
+    background-color:transparent
 }
 
 .boxItems{background-color: transparent;}
