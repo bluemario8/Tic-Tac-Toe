@@ -146,3 +146,24 @@ function clearBoard(){
 function resetBoard(){
     location.reload()
 }
+
+for (let button of document.getElementsByClassName("btn"))
+{
+    button.addEventListener("mouseover", (e) => {
+        console.log("mouseover")
+        console.log(button.innerText)
+        if (button.innerText === "")
+        {
+            button.innerText = currentPlayerTurn;
+            button.style.color = "rgba(0, 0, 0, 0.5)";
+        }
+    });
+    button.addEventListener("click", (e) => {
+        button.style.color = "";
+        updateBoard();
+    })
+    button.addEventListener("mouseleave", (e) => {
+        button.style.color = "";
+        updateBoard();
+    });
+}

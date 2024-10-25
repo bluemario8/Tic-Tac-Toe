@@ -73,7 +73,7 @@ align-items: center;
     background-color: rgba(84, 41, 3, 0.608);
 }
 button:hover{
-    background-color:transparent
+    background-color:transparent;
 }
 
 .boxItems{background-color: transparent;}
