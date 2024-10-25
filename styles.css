@@ -42,6 +42,13 @@ h1, h2{
 
 .player2{
     background-color: rgba(221, 24, 113, 0.795);
+
+    background-color: rgba(76, 76, 142, 0.822);
+}
+
+.player2{
+    background-color: rgba(199, 74, 74, 0.795);
+
 }
 
 .tie{
@@ -93,9 +100,17 @@ button:hover{
 
     height:50px ;
     width: 100px;
+
     background-color:rgba(225, 9, 99, 0.849) ;
 }
 
 .bottom:hover{
     background-color: rgba(27, 202, 241, 0.69);
+=======
+    background-color:rgba(190, 6, 6, 0.849) ;
+}
+
+.bottom:hover{
+    background-color: rgba(11, 11, 150, 0.69);
+
 }
